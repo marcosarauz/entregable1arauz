@@ -1,41 +1,79 @@
-function comprar(nombre, tipodeentrada, edad){
-const entradas =["plateaA", "plateaB", "plateaC", "palcos"];
+let titulo = document.getElementById('titulo');
 
-nombre = prompt("ingrese su nombre");
+titulo.innerHTML = "BIENVENIDOS AL SITIO OFICIAL DE COMPRA DE ENTRADAS PARA TU EQUIPO FAVORITO"
 
-while(nombre === "" || !isNaN(nombre)){
-    alert("ingrese un dato valido");
-    nombre = prompt("ingrese su nombre");
+let botonclick = document.querySelectorAll('.boton')[0]
+
+botonclick.addEventListener('click', () => {
+    alert("usted obtuvo con exito su entrada, complete sus datos para finalizar")
+})
+
+botonclick = document.querySelectorAll('.boton')[1]
+
+botonclick.addEventListener('click', () => {
+    alert("usted obtuvo con exito su entrada, complete sus datos para finalizar")
+})
+
+
+botonclick = document.querySelectorAll('.boton')[2]
+
+
+botonclick.addEventListener('click', () => {
+    alert("usted obtuvo con exito su entrada, complete sus datos para finalizar")
+})
+
+botonclick = document.querySelectorAll('.boton')[3]
+
+botonclick.addEventListener('click', () => {
+    alert("usted obtuvo con exito su entrada, complete sus datos para finalizar")
+})
+
+let equipos = [];
+
+const cargarequipos = () => {
+    equipos = [
+        {
+            club: "Boca",
+            estadio: "Bombonera"
+        },
+        {
+            club: "River",
+            estadio: "Monumental"
+        },
+        {
+            club: "Racing",
+            estadio: "Cilindro"
+        },
+        {
+            club: "SanLorenzo",
+            estadio: "NuevoGasometro"
+        },
+        {
+            club: "Independiente",
+            estadio: "libertadoresDeAmerica"
+        },
+        {
+            club: "Estudiantes",
+            estadio: "UnicoDeLaPlata"
+        }
+    ];
+
+     let main = document.querySelector('#main');
+     let sectiondelmain = document.createElement('section');
+
+      let lista = document.createElement('ul');
+
+      equipos.forEach(objeto => {
+          let item = document.createElement('li');
+          item.textContent = `club: ${objeto.club}, estadio: ${objeto.estadio}`;
+
+      lista.appendChild(item);
+      });
+
+      sectiondelmain.appendChild(lista);
+    
+     main.appendChild(sectiondelmain);
 }
+cargarequipos();
 
-tipodeentrada = prompt( nombre + " ingrese su tipo de entrada: " + entradas);
-
-
-while(tipodeentrada === "" || !isNaN(tipodeentrada)){
-    alert("ingrese un dato valido");
-    tipodeentrada = prompt("ingrese su tipo de entrada");
-}
-
-if(tipodeentrada == entradas[0] || tipodeentrada === entradas[1] || tipodeentrada === entradas[2] || tipodeentrada === entradas[3]){
-    confirm( nombre + " ingrese su edad para verificar si usted puede obtener entradas")
-}else{
-    alert("usted a ingresado una opcion no valida");
-    return nombre;
-}
-
-edad = parseInt(prompt("ingrese su edad"));
-
-
-while(isNaN(edad) || edad <= 0){
-    alert("ingrese un dato valido");
-    edad = parseInt(prompt("ingrese su edad"));
-}
-if(edad < 18){
-    alert(nombre + " usted es menor de edad no puede obtener entradas")
-}else if(edad >= 18){
-    confirm( nombre + " usted a obtenido su entrada con exito");
-}
-}
-
-comprar();
-
+localStorage.setItem("equipos", JSON.stringify(equipos))

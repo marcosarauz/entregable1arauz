@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
+<body class="body">
+    <header>
+        <h1 id="titulo">titulo principal</h1>
+    </header>
+
+    <main id="main">
+        <h2 class="tipodeentrada">ELIJE TU TIPO DE ENTRADA</h2>
+        
+        <div class="card">
+            <h3 class="conteiner">Planta baja A</h3>
+            <h4 class="conteiner">$65000</h4>
+            <button class="boton">COMPRAR</button>
+        </div>
+
+        <div class="card">
+            <h3 class="conteiner">Planta baja B</h3>
+            <h4 class="conteiner">$59000</h4>
+            <button class="boton">COMPRAR</button>
+        </div>
+        
+        <div class="card">
+            <h3 class="conteiner">Planta baja C</h3>
+            <h4 class="conteiner">$47000</h4>
+            <button class="boton">COMPRAR</button>
+        </div>
+
+        <div class="card">
+            <h4 class="conteiner">Palcos</h4>
+            <h3 class="conteiner">$78000</h3>
+            <button class="boton">COMPRAR</button>
+        </div>
+        
+    </main>
+    
+    <hr>
+    <footer>
+        <form>
+            <fieldset></fieldset>
+            <legend class="legend">COMPLETA TUS DATOS PARA TERMINAR TU COMPRA</legend>
+            <nav>
+                <label for="nombre">NOMBRE Y APELLIDO</label>
+                <input type="text" id="nombre" name="nombre">
+                <button class="aceptar">ACEPTAR</button>
+            </nav>
+            <nav>
+                <label for="correo">EMAIL</label>
+                <input type="email" id="correo" name="correo">
+                <button class="aceptar">ACEPTAR</button>
+            </nav>
+            <nav>
+                <label for="contra">CREA UNA CONTRASEÑA</label>
+                <input type="password" id="contra" name="contra">
+                <button class="aceptar">ACEPTAR</button>
+            </nav>
+        </fieldset>
+    </form>
+    </footer>
     <script src="index.js"></script>
 </body>
 </html>
